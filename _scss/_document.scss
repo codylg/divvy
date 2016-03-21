@@ -1,0 +1,98 @@
+::selection {
+  color: $white;
+  text-shadow: none;
+  background-color: $blue;
+}
+
+::-moz-selection {
+  color: $white;
+  text-shadow: none;
+  background-color: $blue;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  @include font-antialias;
+  font-family: $fontMono;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6em;
+  color: $charcoal;
+  background-color: $background;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
+  font-family: $fontMono;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 1em 0;
+  font-family: $fontMono;
+}
+
+hr {
+  position: relative;
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: $pagePadding 0;
+  border: none;
+  @include dotted-line;
+}
+
+a,
+a:visited,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  @include transition;
+}
+
+a {
+  color: $blue;
+
+  &:hover {
+    color: $blueLight;
+  }
+}

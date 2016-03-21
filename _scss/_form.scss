@@ -1,0 +1,38 @@
+input {
+  @include prefix(box-sizing, border-box);
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0 $pagePadding;
+  @include font-antialias;
+  font-family: monospace;
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 1.33em;
+  color: $blueLight;
+  border: none;
+  background-color: transparent;
+  @include prefix(appearance, none);
+
+  &:hover:not(:focus) {
+    text-decoration: underline;
+
+    @include placeholder {
+      text-decoration: underline;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include placeholder {
+    color: $blueGreyLight;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  @include prefix(appearance, none);
+  margin: 0;
+}

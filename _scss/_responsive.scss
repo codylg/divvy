@@ -1,0 +1,63 @@
+@media (max-width: 1024px) {
+
+  #divvy {
+
+    div.container {
+      display: block;
+      min-height: 0;
+
+      div.text-box {
+        width: auto;
+        padding-left: $pagePadding;
+        @include prefix(clip-path, none);
+      }
+    }
+
+    #calculator {
+      width: 100%;
+    }
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  [data-tooltip]::after {
+    display: none;
+  }
+
+  #divvy {
+    padding: 0;
+
+    header,
+    footer {
+      padding: 7px ($pagePadding / 2);
+
+      h1 {
+        margin: 0 1em 0 0.5em;
+      }
+    }
+
+    div.container {
+      border-radius: 0;
+
+      div.text-box {
+        padding: $pagePadding / 2;
+      }
+    }
+
+    #calculator {
+      padding: 0;
+
+      div.person,
+      div.add-person {
+        @include prefix(flex-grow, 1);
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

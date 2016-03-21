@@ -1,0 +1,102 @@
+block variables
+  - var title = "Divvy"
+  - var description = "Split bills between friends"
+  - var card = "card-divvy.png"
+
+doctype html
+html(lang="en")
+
+  head
+
+    title #{title} &#8729; #{description}
+    meta(name="description", content="#{description}")
+    meta(name="robots", content="NOODP")
+    meta(name="theme-color", content="#1e96ff")
+    meta(charset="utf-8")
+    meta(name="viewport", content="initial-scale=1")
+    meta(name="author", content="Cody Lindsay Gordon")
+    
+    //- Opengraph
+    meta(property="og:title", content="#{title} &bull; #{description}")
+    meta(property="og:site_name", content="#{title}")
+    meta(property="og:description", content="#{description}")
+    meta(property="og:type", content="website")
+    meta(property="og:url", content="http://divvy.lol")
+    meta(property="og:image", content="http://divvy.lol/#{card}")
+    
+    //- iOS webclip icons
+    link(rel="apple-touch-icon", href="touch-icon-iphone.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="touch-icon-ipad.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="touch-icon-iphone-retina.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="touch-icon-ipad-retina.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="touch-icon-iphone-plus-retina.png")
+    
+    link(rel="icon", href="favicon.ico", type="image/x-icon")
+    link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+    link(rel="stylesheet", href="divvy.css")
+    
+  body#divvy
+    
+    header
+      svg(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve")
+        path(d="M13,12.709v3")
+        path(d="M17,11.121v3")
+        path(d="M15,12.149v3")
+        ellipse(cx="10", cy="8", rx="9", ry="5")
+        path(d="M19,8v3c0,2.761-4.029,5-9,5s-9-2.239-9-5V8")
+      h1 #{title}
+      h2 #{description}
+        
+    div.container
+    
+      div#calculator
+      
+        div#person-template.person
+          span(data-tooltip="Remove person").remove-person.remove-control
+          input.name(type="text", placeholder="Person", autocapitalize="word", autocomplete="off", autocorrect="off")
+          div.expense-list
+            div#expense-template.expense
+              span(data-tooltip="Remove expense").remove-expense.remove-control
+              input.label.small-text(type="text", placeholder="Expense", autocapitalize="sentence", autocomplete="off")
+              input.expense-cost(type="number", min="0", placeholder="0.00")
+          div.add-expense.small-text + Add expense
+          hr
+          div.expense-total 0.00
+      
+        div.person
+          span(data-tooltip="Remove person").remove-person.remove-control
+          input.name(type="text", placeholder="Person", autocapitalize="word", autocomplete="off", autocorrect="off")
+          div.expense-list
+            div.expense
+              span(data-tooltip="Remove expense").remove-expense.remove-control
+              input.label.small-text(type="text", placeholder="Expense", autocapitalize="sentence", autocomplete="off")
+              input.expense-cost(type="number", min="0", placeholder="0.00")
+          div.add-expense.small-text + Add expense
+          hr
+          div.expense-total 0.00
+  
+        div.add-person
+          div.small-text + Add person
+          
+      div.text-box
+        div.payment-summary
+        h4.cost-summary.hidden
+          span.cost-total 0.00
+          |  split between 
+          span.number-of-people 2
+          |  people at 
+          span.cost-share 0.00
+          |  each
+        h4.add-expenses Add the expenses for each person and the total bill will be shared
+        h4.add-more-people.hidden
+          | Add more people pls
+          br
+          br
+          | ༼ つ ͠° ͟ ͟ʖ ͡° ༽つ
+          
+    footer
+      h2 Made by 
+        a(href="//clg.name", target="_blank") Cody Lindsay Gordon
+  
+    script(type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(type="text/javascript", src="divvy.js")

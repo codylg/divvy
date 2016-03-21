@@ -1,0 +1,10 @@
+@mixin font-antialias {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+  * Monospaced font
+  */
+// $fontMono: "Letter Gothic Std", monospace;;
+$fontMono: monospace;
