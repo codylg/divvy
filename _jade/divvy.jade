@@ -1,6 +1,7 @@
 block variables
   - var title = "Divvy"
-  - var description = "Split bills between friends"
+  - var tagline = "Split bills between friends"
+  - var description = "Divvy can split bills between friends"
   - var card = "card-divvy.png"
 
 doctype html
@@ -8,7 +9,7 @@ html(lang="en")
 
   head
 
-    title #{title} &#8729; #{description}
+    title #{title} &#8729; #{tagline}
     meta(name="description", content="#{description}")
     meta(name="robots", content="NOODP")
     meta(name="theme-color", content="#1e96ff")
@@ -17,7 +18,7 @@ html(lang="en")
     meta(name="author", content="Cody Lindsay Gordon")
     
     //- Opengraph
-    meta(property="og:title", content="#{title} &bull; #{description}")
+    meta(property="og:title", content="#{title} &bull; #{tagline}")
     meta(property="og:site_name", content="#{title}")
     meta(property="og:description", content="#{description}")
     meta(property="og:type", content="website")
