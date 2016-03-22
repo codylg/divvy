@@ -32,7 +32,7 @@
       
     </script>
   </head>
-  <body id="divvy">
+  <body id="divvy" class="loading">
     <header>
       <svg version="1.1" x="0px" y="0px" viewBox="0 0 20 20" xml:space="preserve">
         <path d="M13,12.709v3"></path>
@@ -45,6 +45,9 @@
       <h2>Divvy can split bills between friends</h2>
     </header>
     <div class="container">
+      <svg class="loader">
+        <circle cx="10" cy="10" r="9"></circle>
+      </svg>
       <div id="calculator">
         <div id="person-template" class="person"><span data-tooltip="Remove person" class="remove-person remove-control"></span>
           <input type="text" placeholder="Person" autocapitalize="word" autocomplete="off" autocorrect="off" class="name">

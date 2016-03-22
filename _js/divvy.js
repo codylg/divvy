@@ -202,3 +202,11 @@ $('body').on('click', '.remove-control', function() {
   $(this).parent().remove();
   divvy();
 });
+
+
+
+$(document).ready(function(){
+
+  $('body').removeClass('loading');
+
+});

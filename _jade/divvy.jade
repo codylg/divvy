@@ -44,7 +44,7 @@ html(lang="en")
       ga('create', 'UA-42238629-9', 'auto');
       ga('send', 'pageview');
     
-  body#divvy
+  body#divvy.loading
     
     header
       svg(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve")
@@ -57,6 +57,9 @@ html(lang="en")
       h2 #{description}
         
     div.container
+    
+      svg.loader
+        circle(cx="10", cy="10", r="9")
     
       div#calculator
       
