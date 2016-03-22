@@ -104,7 +104,6 @@
         stroke-width: 2;
         stroke-linecap: round;
         @include prefix(transform-origin, (0.5px * $loaderSize) (0.5px * $loaderSize) 0);
-        @include prefix(animation, loader 2s linear infinite);
       }
     }
   }
@@ -259,6 +258,10 @@
 
     svg.loader {
       opacity: 1;
+
+      circle {
+        @include prefix(animation, loader 2s linear infinite);
+      }
     }
   }
 }
