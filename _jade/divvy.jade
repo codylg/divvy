@@ -1,6 +1,7 @@
 block variables
   - var title = "Divvy"
-  - var description = "Split bills between friends"
+  - var tagline = "Split bills between friends"
+  - var description = "Divvy can split bills between friends"
   - var card = "card-divvy.png"
 
 doctype html
@@ -8,7 +9,7 @@ html(lang="en")
 
   head
 
-    title #{title} &#8729; #{description}
+    title #{title} &#8729; #{tagline}
     meta(name="description", content="#{description}")
     meta(name="robots", content="NOODP")
     meta(name="theme-color", content="#1e96ff")
@@ -17,7 +18,7 @@ html(lang="en")
     meta(name="author", content="Cody Lindsay Gordon")
     
     //- Opengraph
-    meta(property="og:title", content="#{title} &bull; #{description}")
+    meta(property="og:title", content="#{title} &bull; #{tagline}")
     meta(property="og:site_name", content="#{title}")
     meta(property="og:description", content="#{description}")
     meta(property="og:type", content="website")
@@ -35,7 +36,15 @@ html(lang="en")
     link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
     link(rel="stylesheet", href="divvy.css")
     
-  body#divvy
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42238629-9', 'auto');
+      ga('send', 'pageview');
+    
+  body.loading
     
     header
       svg(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve")
@@ -49,7 +58,10 @@ html(lang="en")
         
     div.container
     
-      div#calculator
+      svg.loader
+        circle(cx="10", cy="10", r="9")
+    
+      div.calculator
       
         div#person-template.person
           span(data-tooltip="Remove person").remove-person.remove-control
@@ -88,6 +100,11 @@ html(lang="en")
           span.cost-share 0.00
           |  each
         h4.add-expenses Add the expenses for each person and the total bill will be shared
+        h4.even-expenses.hidden
+          | It all worked out in the end
+          br
+          br
+          | ( ͡° ͜ʖ ͡°)
         h4.add-more-people.hidden
           | Add more people pls
           br

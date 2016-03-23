@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Divvy &#8729; Split bills between friends</title>
-    <meta name="description" content="Split bills between friends">
+    <meta name="description" content="Divvy can split bills between friends">
     <meta name="robots" content="NOODP">
     <meta name="theme-color" content="#1e96ff">
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <meta name="author" content="Cody Lindsay Gordon">
     <meta property="og:title" content="Divvy &amp;bull; Split bills between friends">
     <meta property="og:site_name" content="Divvy">
-    <meta property="og:description" content="Split bills between friends">
+    <meta property="og:description" content="Divvy can split bills between friends">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://divvy.lol">
     <meta property="og:image" content="http://divvy.lol/card-divvy.png">
@@ -22,8 +22,17 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="divvy.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42238629-9', 'auto');
+      ga('send', 'pageview');
+      
+    </script>
   </head>
-  <body id="divvy">
+  <body class="loading">
     <header>
       <svg version="1.1" x="0px" y="0px" viewBox="0 0 20 20" xml:space="preserve">
         <path d="M13,12.709v3"></path>
@@ -33,10 +42,13 @@
         <path d="M19,8v3c0,2.761-4.029,5-9,5s-9-2.239-9-5V8"></path>
       </svg>
       <h1>Divvy</h1>
-      <h2>Split bills between friends</h2>
+      <h2>Divvy can split bills between friends</h2>
     </header>
     <div class="container">
-      <div id="calculator">
+      <svg class="loader">
+        <circle cx="10" cy="10" r="9"></circle>
+      </svg>
+      <div class="calculator">
         <div id="person-template" class="person"><span data-tooltip="Remove person" class="remove-person remove-control"></span>
           <input type="text" placeholder="Person" autocapitalize="word" autocomplete="off" autocorrect="off" class="name">
           <div class="expense-list">
@@ -69,6 +81,7 @@
         <div class="payment-summary"></div>
         <h4 class="cost-summary hidden"><span class="cost-total">0.00</span> split between <span class="number-of-people">2</span> people at <span class="cost-share">0.00</span> each</h4>
         <h4 class="add-expenses">Add the expenses for each person and the total bill will be shared</h4>
+        <h4 class="even-expenses hidden">It all worked out in the end<br><br>( ͡° ͜ʖ ͡°)</h4>
         <h4 class="add-more-people hidden">Add more people pls<br><br>༼ つ ͠° ͟ ͟ʖ ͡° ༽つ</h4>
       </div>
     </div>

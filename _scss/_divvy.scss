@@ -1,217 +1,229 @@
-#divvy {
+header,
+footer {
   @include prefix(box-sizing, border-box);
-  padding: 0 $pagePadding;
+  display: block;
+  height: $pagePadding;
+  padding: 7px 0;
 
-  header,
-  footer {
-    @include prefix(box-sizing, border-box);
-    display: block;
-    height: $pagePadding;
-    padding: 7px 0;
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 26px;
+    height: 26px;
 
-    svg {
-      display: inline-block;
-      vertical-align: middle;
-      width: 26px;
-      height: 26px;
+    path,
+    ellipse {
+      fill: none;
+      stroke: $charcoal;
+    }
+  }
 
-      path,
-      ellipse {
-        fill: none;
-        stroke: $charcoal;
+  h1,
+  h2 {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  h1 {
+    margin: 0 2em 0 1em;
+    font-size: 1.4rem;
+    color: $charcoal;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    color: $blueGrey;
+  }
+}
+
+div.container {
+  position: relative;
+  @include flex;
+  @include prefix(box-sizing, border-box);
+  overflow: hidden;
+  min-height: calc(100vh - (#{$pagePadding} * 2));
+  color: $white;
+  border-radius: $radius;
+  background-color: $blue;
+}
+
+div.text-box {
+  @include prefix(flex-grow, 1);
+  @include prefix(flex-shrink, 1);
+  width: 330px;
+  padding: $pagePadding;
+  padding-left: $pagePadding * 2;
+  background-color: $blueLight;
+  @include prefix(clip-path, polygon($pagePadding 0, 100% 0%, 100% 100%, 0% 100%));
+  @include transition($property: opacity);
+
+  h3,
+  h4 {
+    @include prefix(animation, slide-down 0.66s ease-in-out 1);
+  }
+
+  h4 {
+    color: $blueFaint;
+  }
+
+  div.cost-summary {
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: $pagePadding;
+    }
+  }
+}
+
+div.calculator {
+  @include flex;
+  @include prefix(flex-grow, 1);
+  @include prefix(flex-shrink, 1);
+  @include prefix(flex-wrap, wrap);
+  @include prefix(align-items, flex-start);
+  @include prefix(box-sizing, border-box);
+  width: 70%;
+  height: 100%;
+  padding: $pagePadding / 2;
+  font-size: 0;
+  @include transition($property: opacity);
+
+  div.person,
+  div.add-person {
+    position: relative;
+    @include prefix(flex-basis, 240px);
+    height: auto;
+    padding: $pagePadding 0;
+    margin: $pagePadding / 2;
+    font-size: 2.4rem;
+    line-height: 1.33em;
+    color: $blueLight;
+    border-radius: $radius;
+    background-color: $white;
+    @include prefix(box-shadow, 0 1px 2px $blueGrey);
+    @include transition;
+    @include prefix(transform-origin, top);
+    @include prefix(animation, person-scale 0.4s ease-in-out 1);
+
+    &:hover {
+
+      .remove-person {
+        opacity: 1;
+        pointer-events: all;
       }
     }
 
-    h1,
-    h2 {
-      display: inline-block;
-      margin: 0;
-      vertical-align: middle;
-    }
-
-    h1 {
-      margin: 0 2em 0 1em;
-      font-size: 1.4rem;
-      color: $charcoal;
-    }
-
-    h2 {
-      font-size: 1.1rem;
+    .small-text {
+      font-size: 1.6rem;
       color: $blueGrey;
     }
-  }
 
-  div.container {
-    position: relative;
-    @include flex;
-    @include prefix(box-sizing, border-box);
-    overflow: hidden;
-    min-height: calc(100vh - (#{$pagePadding} * 2));
-    color: $white;
-    border-radius: $radius;
-    background-color: $blue;
-
-    div.text-box {
-      @include prefix(flex-grow, 1);
-      @include prefix(flex-shrink, 1);
-      width: 330px;
-      padding: $pagePadding;
-      padding-left: $pagePadding * 2;
-      background-color: $blueLight;
-      @include prefix(clip-path, polygon($pagePadding 0, 100% 0%, 100% 100%, 0% 100%));
-
-      h4 {
-        color: $blueFaint;
-      }
-
-      div.cost-summary {
-
-        & > *:first-child {
-          margin-top: 0;
-        }
-
-        & > *:last-child {
-          margin-bottom: $pagePadding;
-        }
-      }
-    }
-  }
-
-  #calculator {
-    @include flex;
-    @include prefix(flex-grow, 1);
-    @include prefix(flex-shrink, 1);
-    @include prefix(flex-wrap, wrap);
-    @include prefix(align-items, flex-start);
-    @include prefix(box-sizing, border-box);
-    width: 70%;
-    height: 100%;
-    padding: $pagePadding / 2;
-    font-size: 0;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 1.33em 0;
-
-      &:first-child {
-       margin-top: 0;
-      }
-
-      &:last-child {
-       margin-bottom: 0;
-      }
-    }
-
-    div.person,
-    div.add-person {
-      position: relative;
-      @include prefix(flex-basis, 240px);
-      height: auto;
-      padding: $pagePadding 0;
-      margin: $pagePadding / 2;
-      font-size: 2.4rem;
-      line-height: 1.33em;
-      color: $blueLight;
-      border-radius: $radius;
-      background-color: $white;
-      @include prefix(box-shadow, 0 1px 2px $blueGrey);
+    .remove-person,
+    .remove-expense {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 16px 14px;
+      opacity: 0;
       @include transition;
-      @include prefix(transform-origin, top);
-      @include prefix(animation, person-scale 0.4s ease-in-out 1);
+      cursor: pointer;
+      pointer-events: none;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 2px;
+        border-radius: $radius;
+        background-color: $blueGreyLight;
+      }
+
+      &:hover::before {
+        background-color: $blue;
+      }
+    }
+
+    div.expense {
+      position: relative;
+      margin-top: $pagePadding / 2;
+      @include prefix(animation, expense-scale 0.33s ease-in-out 1);
+      @include prefix(animation-fill-mode, both);
 
       &:hover {
 
-        .remove-person {
+        .remove-expense {
           opacity: 1;
           pointer-events: all;
         }
       }
 
-      .small-text {
-        font-size: 1.6rem;
-        color: $blueGrey;
+      .label {
+        margin-bottom: 0.2em;
       }
 
-      .remove-person,
       .remove-expense {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 16px 14px;
-        opacity: 0;
-        @include transition;
-        cursor: pointer;
-        pointer-events: none;
-
-        &::before {
-          content: '';
-          display: block;
-          width: 12px;
-          height: 2px;
-          border-radius: $radius;
-          background-color: $blueGreyLight;
-        }
-
-        &:hover::before {
-          background-color: $blue;
-        }
-      }
-
-      div.expense {
-        position: relative;
-        margin-top: $pagePadding / 2;
-        @include prefix(animation, expense-scale 0.33s ease-in-out 1);
-        @include prefix(animation-fill-mode, both);
-
-        &:hover {
-
-          .remove-expense {
-            opacity: 1;
-            pointer-events: all;
-          }
-        }
-
-        .label {
-          margin-bottom: 0.2em;
-        }
-
-        .remove-expense {
-          top: -8px;
-        }
-      }
-
-      .expense-total {
-        padding: 0 $pagePadding;
-      }
-
-      div.add-expense {
-        padding: 0 $pagePadding;
-        margin-top: $pagePadding / 2;
-        cursor: pointer;
+        top: -8px;
       }
     }
 
-    div.add-person {
-      line-height: 1;
+    .expense-total {
+      padding: 0 $pagePadding;
+    }
+
+    div.add-expense {
+      padding: 0 $pagePadding;
+      margin-top: $pagePadding / 2;
       cursor: pointer;
+    }
+  }
 
-      &:hover {
-        @include prefix(transform, scaleY(1.033));
-      }
+  div.add-person {
+    line-height: 1;
+    cursor: pointer;
 
-      div {
-        padding: 0 $pagePadding;
-      }
+    &:hover {
+      @include prefix(transform, scaleY(1.033));
+    }
+
+    div {
+      padding: 0 $pagePadding;
     }
   }
 }
 
 .hidden {
   display: none;
+}
+
+.loading {
+
+  div.calculator,
+  div.text-box {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  svg.loader {
+    opacity: 1;
+
+    circle {
+      @include prefix(animation, loader 2s linear infinite);
+    }
+  }
+}
+
+@include keyframes(slide-down) {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  } 100% {
+    max-height: 250px;
+    opacity: 1;
+  }
 }
 
 @include keyframes(person-scale) {

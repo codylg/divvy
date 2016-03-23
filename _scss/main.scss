@@ -1,14 +1,16 @@
+$font: monospace;
 $radius: 2px;
 $pagePadding: 40px;
 
 @import 'normalize';
-@import 'mixins';
 
 @import 'colors';
-@import 'fonts';
-@import 'form';
-@import 'tooltips';
+@import 'mixins';
+
 @import 'document';
+@import 'form';
+@import 'tooltip';
+@import 'loader';
 
 @import 'divvy';
 
