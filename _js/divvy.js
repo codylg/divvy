@@ -74,7 +74,8 @@ function divvy() {
   });
 
   // Find who should pay who
-  if (persons.length > 1 && totalCost != 0) {
+  if (persons.length > 1 && totalCost != 0 && balances[indexOfLowest(balances)] != 0) {
+    // There are enough people, the total cost is not 0, and the cost does not even out
 
     while (balances[indexOfLowest(balances)] < -0.01) {
 
@@ -97,6 +98,7 @@ function divvy() {
     }
 
     $('.cost-summary').removeClass('hidden');
+    $('.even-expenses').addClass('hidden');
     $('.add-expenses').addClass('hidden');
     $('.add-more-people').addClass('hidden');
 
@@ -104,15 +106,27 @@ function divvy() {
     $('.number-of-people').text(totalPersons);
     $('.cost-share').text(decimalize(share));
 
-  } else if (persons.length > 1) {
+  } else if (persons.length > 1 && totalCost != 0) {
+    // There are enough people, the total cost is not 0, but the cost evens out
 
     $('.cost-summary').addClass('hidden');
+    $('.even-expenses').removeClass('hidden');
+    $('.add-expenses').addClass('hidden');
+    $('.add-more-people').addClass('hidden');
+
+  } else if (persons.length > 1) {
+    // There are enough people, but the total cost is 0
+
+    $('.cost-summary').addClass('hidden');
+    $('.even-expenses').addClass('hidden');
     $('.add-expenses').removeClass('hidden');
     $('.add-more-people').addClass('hidden');
 
   } else {
+    // There are not enough people
 
     $('.cost-summary').addClass('hidden');
+    $('.even-expenses').addClass('hidden');
     $('.add-expenses').addClass('hidden');
     $('.add-more-people').removeClass('hidden');
 
