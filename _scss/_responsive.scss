@@ -55,6 +55,11 @@
       &:not(:last-child) {
         margin-bottom: 0;
       }
+
+      .remove-person,
+      .remove-expense {
+        opacity: 1;
+      }
     }
   }
 
