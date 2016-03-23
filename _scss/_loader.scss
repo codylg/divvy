@@ -1,0 +1,39 @@
+$loaderSize: 20;
+
+svg.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: $loaderSize + px;
+  height: $loaderSize + px;
+  margin-top: $loaderSize / -2;
+  margin-left: $loaderSize / -2;
+  x: 0px;
+  y: 0px;
+  viewBox: 0 0 $loaderSize $loaderSize;
+  @include transition($property: opacity);
+  opacity: 0;
+
+  circle {
+    fill: none;
+    stroke-dasharray: (3.14 * $loaderSize);
+    stroke: $white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    @include prefix(transform-origin, (0.5px * $loaderSize) (0.5px * $loaderSize) 0);
+  }
+}
+
+@include keyframes(loader) {
+  0% {
+    @include prefix(transform, rotate(0deg));
+    stroke-dashoffset: (0.66 * $loaderSize);
+  } 50% {
+    @include prefix(transform, rotate(720deg));
+    stroke-dashoffset: (3.14 * $loaderSize);
+  } 100% {
+    @include prefix(transform, rotate(1080deg));
+    stroke-dashoffset: (0.66 * $loaderSize);
+  }
+}

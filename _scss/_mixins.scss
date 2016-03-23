@@ -1,7 +1,5 @@
 /**
- * Generate prefix helper
- *
- * @author Cody Lindsay Gordon
+ * Generate prefixed properties
  *
  * @param {String} $property - property to prefix
  * @param {String} $values - values of property
@@ -15,30 +13,28 @@
 }
 
 
+
 /**
- * Generate transition helper
+ * Generate transition
  *
- * @author Cody Lindsay Gordon
- *
- * @param {String} $attribute - attribute to animate
- * @param {Number} $duration - duration of animation
+ * @param {String} $property - property to transition
+ * @param {Number} $duration - duration of transition
+ * @param {String} $timing - timing function of transition
 */
+
 @mixin transition($property: all, $duration: 0.33s, $timing: cubic-bezier(0.19, 1, 0.22, 1)) {
   @include prefix(transition, $property $duration $timing);
 }
 
-@mixin transition-properties($property...) {
-  @include prefix(transition-property, $property);
-}
+
 
 /**
- * Generate keyframe helper
- *
- * @author Cody Lindsay Gordon
+ * Generate animation keyframes
  *
  * @param {String} $name - name of animation
- * @param {String} @content - keyframes of animation
+ * @param {String} @content - add keyframes of animation here
 */
+
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
       @content;
@@ -56,14 +52,10 @@
 
 
 
-
-
 /**
- * Generate dotted line helper
+ * Generate dotted line on the top or bottom of an element
  *
- * @author Cody Lindsay Gordon
- *
- * @param {Color} $color - color of the border
+ * @param {Color} $color - color of the dots
  * @param {String} $alignment - display the line on the top or bottom (default)
 */
 
@@ -78,31 +70,12 @@ $dottedLineSpacing: 6;
 
 
 
-
 /**
- * Generate linear gradient
+ * Adds display:flex and other variations
  *
- * @author Cody Lindsay Gordon
- *
- * @param {Number} $angle   - Angle of gradient in degrees.
- * @param {Color} $colors   - Comma separated colors.
+ * @param {String} $property - use 'inline-flex' as the argument for inline-flex
 */
-@mixin linear-gradient($angle, $colors...) {
-  background-image: -webkit-linear-gradient(#{$angle}deg, $colors);
-  background-image: -moz-linear-gradient(#{$angle}deg, $colors);
-  background-image: -o-linear-gradient(#{$angle}deg, $colors);
-  background-image: linear-gradient(#{$angle}deg, $colors);
-}
 
-
-
-
-
-/**
- * Prefixes flex. Use 'inline-flex' as the argument for inline-flex.
- *
- * @author Cody Lindsay Gordon
-*/
 @mixin flex($property: flex) {
   display: -webkit-box;
   display: -webkit-$property;
@@ -114,25 +87,27 @@ $dottedLineSpacing: 6;
 
 
 
+/**
+ * Add font antialias properties
+*/
+
+@mixin font-antialias {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 
 /**
- * For styling input placeholder content
+ * Style input placeholder
  *
- * @author Cody Lindsay Gordon
+ * @param {String} $content - add styles for placeholders here
 */
+
 @mixin placeholder {
   &::-webkit-input-placeholder {@content}
   &::-moz-placeholder          {@content}
   &:-ms-input-placeholder      {@content}
   &::input-placeholder         {@content}
   &::placeholder               {@content}
-}
-
-@mixin placeholder-hidden {
-  &::-webkit-input-placeholder[style*=hidden] {@content}
-  &::-moz-placeholder[style*=hidden]          {@content}
-  &:-ms-input-placeholder[style*=hidden]      {@content}
-  &::input-placeholder[style*=hidden]         {@content}
-  &::placeholder[style*=hidden]               {@content}
 }
