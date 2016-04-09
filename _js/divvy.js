@@ -137,6 +137,10 @@ $('body').on('input', 'input', function() {
   divvy();
 });
 
+$('body').on('click', 'input', function() {
+  $(this).select();
+});
+
 var expenseTemplate = $('#expense-template').removeAttr('id').clone();
 
 // Add new expense
