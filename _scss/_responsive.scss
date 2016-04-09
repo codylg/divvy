@@ -1,17 +1,17 @@
 @media (max-width: 1024px) {
 
-  div.container {
+  .container {
     display: block;
     min-height: 0;
   }
 
-  div.text-box {
+  .text-box {
     width: auto;
     padding-left: $pagePadding;
     @include prefix(clip-path, none);
   }
 
-  div.calculator {
+  .calculator {
     width: 100%;
   }
 }
@@ -37,19 +37,19 @@
     }
   }
 
-  div.container {
+  .container {
     border-radius: 0;
   }
 
-  div.text-box {
+  .text-box {
     padding: $pagePadding / 2;
   }
 
-  div.calculator {
+  .calculator {
     padding: 0;
 
-    div.person,
-    div.add-person {
+    .person,
+    .add-person {
       @include prefix(flex-grow, 1);
 
       &:not(:last-child) {

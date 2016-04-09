@@ -36,3 +36,18 @@ input[type=number]::-webkit-outer-spin-button {
   @include prefix(appearance, none);
   margin: 0;
 }
+
+button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  @include prefix(appearance, none);
+  outline: none;
+
+  &:focus {
+    text-decoration: underline;
+    text-decoration-color: $charcoal;
+  }
+}

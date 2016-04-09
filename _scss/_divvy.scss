@@ -37,7 +37,7 @@ footer {
   }
 }
 
-div.container {
+.container {
   position: relative;
   @include flex;
   @include prefix(box-sizing, border-box);
@@ -48,7 +48,7 @@ div.container {
   background-color: $blue;
 }
 
-div.text-box {
+.text-box {
   @include prefix(flex-grow, 1);
   @include prefix(flex-shrink, 1);
   width: 330px;
@@ -67,7 +67,7 @@ div.text-box {
     color: $blueFaint;
   }
 
-  div.cost-summary {
+  .cost-summary {
 
     & > *:first-child {
       margin-top: 0;
@@ -79,7 +79,7 @@ div.text-box {
   }
 }
 
-div.calculator {
+.calculator {
   @include flex;
   @include prefix(flex-grow, 1);
   @include prefix(flex-shrink, 1);
@@ -92,8 +92,8 @@ div.calculator {
   font-size: 0;
   @include transition($property: opacity);
 
-  div.person,
-  div.add-person {
+  .person,
+  .add-person {
     position: relative;
     @include prefix(flex-basis, 240px);
     height: auto;
@@ -147,7 +147,7 @@ div.calculator {
       }
     }
 
-    div.expense {
+    .expense {
       position: relative;
       margin-top: $pagePadding / 2;
       @include prefix(animation, expense-scale 0.33s ease-in-out 1);
@@ -174,14 +174,14 @@ div.calculator {
       padding: 0 $pagePadding;
     }
 
-    div.add-expense {
+    .add-expense {
       padding: 0 $pagePadding;
       margin-top: $pagePadding / 2;
       cursor: pointer;
     }
   }
 
-  div.add-person {
+  .add-person {
     line-height: 1;
     cursor: pointer;
 
@@ -201,8 +201,8 @@ div.calculator {
 
 .loading {
 
-  div.calculator,
-  div.text-box {
+  .calculator,
+  .text-box {
     opacity: 0;
     pointer-events: none;
   }
