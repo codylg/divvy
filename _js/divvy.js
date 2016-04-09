@@ -133,7 +133,7 @@ function divvy() {
   }
 }
 
-$('body').on('input', 'input', function() {
+$('body').on('input', '.js-divvy', function() {
   divvy();
 });
 
