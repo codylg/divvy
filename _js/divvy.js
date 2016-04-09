@@ -145,7 +145,7 @@ var expenseTemplate = $('#expense-template').removeAttr('id').clone();
 
 // Add new expense
 $('body').on('click', '.add-expense', function() {
-  expenseTemplate.clone().insertBefore(this);
+  expenseTemplate.clone().insertBefore(this).find('.label').select();
 });
 
 var names = [
@@ -211,7 +211,7 @@ var personTemplate = $('#person-template').removeAttr('id').clone();
 
 // Add new person
 $('.add-person').click(function() {
-  personTemplate.clone().insertBefore(this).find('.name').val(getRandName);
+  personTemplate.clone().insertBefore(this).find('.name').val(getRandName).select();
   divvy();
 });
 
