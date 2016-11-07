@@ -56,9 +56,15 @@
         margin-bottom: 0;
       }
 
-      .remove-person,
-      .remove-expense {
+      .remove-person {
         opacity: 1;
+      }
+
+      .expense:not(:first-of-type:last-of-type) {
+
+        .remove-expense {
+          opacity: 1;
+        }
       }
     }
   }
