@@ -1,9 +1,4 @@
-/**
- * Generate prefixed properties
- *
- * @param {String} $property - property to prefix
- * @param {String} $values - values of property
-*/
+// Generate prefixed properties
 @mixin prefix($property, $values...) {
   -webkit-#{$property}: #{$values};
   -moz-#{$property}: #{$values};
@@ -12,70 +7,40 @@
   #{$property}: #{$values};
 }
 
-
-
-/**
- * Generate transition
- *
- * @param {String} $property - property to transition
- * @param {Number} $duration - duration of transition
- * @param {String} $timing - timing function of transition
-*/
-
+// Generate transition
 @mixin transition($property: all, $duration: 0.33s, $timing: cubic-bezier(0.19, 1, 0.22, 1)) {
   @include prefix(transition, $property $duration $timing);
 }
 
-
-
-/**
- * Generate animation keyframes
- *
- * @param {String} $name - name of animation
- * @param {String} @content - add keyframes of animation here
-*/
-
+// Generate animation keyframes
+// scss-lint:disable VendorPrefix
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
-      @content;
+    @content;
   }
   @-moz-keyframes #{$name} {
-      @content;
+    @content;
   }
   @-ms-keyframes #{$name} {
-      @content;
+    @content;
   }
   @keyframes #{$name} {
-      @content;
+    @content;
   }
 }
+// scss-lint:enable VendorPrefix
 
+// Generate dotted line on the top or bottom of an element
+$dotted-line-spacing: 6;
 
-
-/**
- * Generate dotted line on the top or bottom of an element
- *
- * @param {Color} $color - color of the dots
- * @param {String} $alignment - display the line on the top or bottom (default)
-*/
-
-$dottedLineSpacing: 6;
-
-@mixin dotted-line($color: $blueGreyLight, $alignment: bottom) {
-  background-image: linear-gradient(to right, $color 0%, $color (100% / $dottedLineSpacing), transparent (100% / $dottedLineSpacing));
+@mixin dotted-line($color: $blue-grey-light, $alignment: bottom) {
+  background-image: linear-gradient(to right, $color 0%, $color (100% / $dotted-line-spacing), transparent (100% / $dotted-line-spacing));
   background-position: 0 $alignment;
-  background-size: ($dottedLineSpacing + px) 1px;
+  background-size: ($dotted-line-spacing + px) 1px;
   background-repeat: repeat-x;
 }
 
-
-
-/**
- * Adds display:flex and other variations
- *
- * @param {String} $property - use 'inline-flex' as the argument for inline-flex
-*/
-
+// Adds display:flex and other variations
 @mixin flex($property: flex) {
   display: -webkit-box;
   display: -webkit-$property;
@@ -85,29 +50,35 @@ $dottedLineSpacing: 6;
   display: $property;
 }
 
-
-
-/**
- * Add font antialias properties
-*/
-
+// Add font antialias properties
 @mixin font-antialias {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-/**
- * Style input placeholder
- *
- * @param {String} $content - add styles for placeholders here
-*/
-
+// Style input placeholder
+// scss-lint:disable VendorPrefix
+// scss-lint:disable PseudoElement
 @mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}
-  &::input-placeholder         {@content}
-  &::placeholder               {@content}
+  &::-webkit-input-placeholder {
+    @content
+  }
+
+  &::-moz-placeholder {
+    @content
+  }
+
+  &:-ms-input-placeholder {
+    @content
+  }
+
+  &::input-placeholder {
+    @content
+  }
+
+  &::placeholder {
+    @content
+  }
 }
+// scss-lint:enable PseudoElement
+// scss-lint:enable VendorPrefix

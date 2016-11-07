@@ -1,13 +1,7 @@
 ::selection {
-  color: $white;
-  text-shadow: none;
   background-color: $blue;
-}
-
-::-moz-selection {
-  color: $white;
   text-shadow: none;
-  background-color: $blue;
+  color: $white;
 }
 
 html {
@@ -19,15 +13,15 @@ body {
   width: 100vw;
   max-width: 100%;
   min-height: 100vh;
-  padding: 0 $pagePadding;
+  padding: 0 $page-padding;
   margin: 0;
+  background-color: $background;
   @include font-antialias;
   font-family: $font;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6em;
   color: $charcoal;
-  background-color: $background;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -66,10 +60,10 @@ p {
 hr {
   position: relative;
   display: block;
-  height: 1px;
   width: 100%;
-  margin: $pagePadding 0;
-  border: none;
+  height: 1px;
+  margin: $page-padding 0;
+  border: 0;
   @include dotted-line;
 }
 
@@ -86,6 +80,6 @@ a {
   color: $blue;
 
   &:hover {
-    color: $blueLight;
+    color: $blue-light;
   }
 }

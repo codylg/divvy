@@ -2,7 +2,7 @@ header,
 footer {
   @include prefix(box-sizing, border-box);
   display: block;
-  height: $pagePadding;
+  height: $page-padding;
   padding: 7px 0;
 
   svg {
@@ -21,8 +21,8 @@ footer {
   h1,
   h2 {
     display: inline-block;
-    margin: 0;
     vertical-align: middle;
+    margin: 0;
   }
 
   h1 {
@@ -33,7 +33,7 @@ footer {
 
   h2 {
     font-size: 1.1rem;
-    color: $blueGrey;
+    color: $blue-grey;
   }
 }
 
@@ -42,20 +42,20 @@ footer {
   @include flex;
   @include prefix(box-sizing, border-box);
   overflow: hidden;
-  min-height: calc(100vh - (#{$pagePadding} * 2));
-  color: $white;
+  min-height: calc(100vh - (#{$page-padding} * 2));
   border-radius: $radius;
   background-color: $blue;
+  color: $white;
 }
 
 .text-box {
   @include prefix(flex-grow, 1);
   @include prefix(flex-shrink, 1);
   width: 330px;
-  padding: $pagePadding;
-  padding-left: $pagePadding * 2;
-  background-color: $blueLight;
-  @include prefix(clip-path, polygon($pagePadding 0, 100% 0%, 100% 100%, 0% 100%));
+  padding: $page-padding;
+  padding-left: $page-padding * 2;
+  background-color: $blue-light;
+  @include prefix(clip-path, polygon($page-padding 0, 100% 0%, 100% 100%, 0% 100%));
   @include transition($property: opacity);
 
   h3,
@@ -68,17 +68,17 @@ footer {
 
   h4,
   p {
-    color: $blueFaint;
+    color: $blue-faint;
   }
 
   .cost-summary {
 
-    & > *:first-child {
+    > *:first-child {
       margin-top: 0;
     }
 
-    & > *:last-child {
-      margin-bottom: $pagePadding;
+    > *:last-child {
+      margin-bottom: $page-padding;
     }
   }
 }
@@ -92,7 +92,7 @@ footer {
   @include prefix(box-sizing, border-box);
   width: 70%;
   height: 100%;
-  padding: $pagePadding / 2;
+  padding: $page-padding / 2;
   font-size: 0;
   @include transition($property: opacity);
 
@@ -101,14 +101,14 @@ footer {
     position: relative;
     @include prefix(flex-basis, 240px);
     height: auto;
-    padding: $pagePadding 0;
-    margin: $pagePadding / 2;
-    font-size: 2.4rem;
-    line-height: 1.33em;
-    color: $blueLight;
+    padding: $page-padding 0;
+    margin: $page-padding / 2;
     border-radius: $radius;
     background-color: $white;
-    @include prefix(box-shadow, 0 1px 2px $blueGrey);
+    font-size: 2.4rem;
+    line-height: 1.33em;
+    color: $blue-light;
+    @include prefix(box-shadow, 0 1px 2px $blue-grey);
     @include transition;
     @include prefix(transform-origin, top);
     @include prefix(animation, person-scale 0.4s ease-in-out 1);
@@ -123,7 +123,7 @@ footer {
 
     .small-text {
       font-size: 1.6rem;
-      color: $blueGrey;
+      color: $blue-grey;
     }
 
     .remove-person,
@@ -134,11 +134,11 @@ footer {
       padding: 14px;
       opacity: 0;
       @include transition;
-      cursor: pointer;
-      pointer-events: none;
       font-size: 2rem;
       line-height: 0.6em;
-      color: $blueGreyLight;
+      color: $blue-grey-light;
+      cursor: pointer;
+      pointer-events: none;
 
       &:hover {
         color: $blue;
@@ -147,7 +147,7 @@ footer {
 
     .expense {
       position: relative;
-      margin-top: $pagePadding / 2;
+      margin-top: $page-padding / 2;
       @include prefix(animation, expense-scale 0.33s ease-in-out 1);
       @include prefix(animation-fill-mode, both);
 
@@ -169,12 +169,12 @@ footer {
     }
 
     .expense-total {
-      padding: 0 $pagePadding;
+      padding: 0 $page-padding;
     }
 
     .add-expense {
-      padding: 0 $pagePadding;
-      margin-top: $pagePadding / 2;
+      padding: 0 $page-padding;
+      margin-top: $page-padding / 2;
       cursor: pointer;
     }
   }
@@ -188,7 +188,7 @@ footer {
     }
 
     div {
-      padding: 0 $pagePadding;
+      padding: 0 $page-padding;
     }
   }
 }
@@ -215,31 +215,40 @@ footer {
 }
 
 @include keyframes(slide-down) {
+
   0% {
     max-height: 0;
     opacity: 0;
-  } 100% {
+  }
+
+  100% {
     max-height: 250px;
     opacity: 1;
   }
 }
 
 @include keyframes(person-scale) {
+
   0% {
     @include prefix(transform, scaleY(0.38));
-  } 100% {
+  }
+
+  100% {
     @include prefix(transform, scale(1));
   }
 }
 
 @include keyframes(expense-scale) {
+
   0% {
     height: 0;
     margin-top: 0;
     opacity: 0;
-  } 100% {
+  }
+
+  100% {
     height: 55px;
-    margin-top: $pagePadding / 2;
+    margin-top: $page-padding / 2;
     opacity: 1;
   }
 }

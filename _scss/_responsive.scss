@@ -7,7 +7,7 @@
 
   .text-box {
     width: auto;
-    padding-left: $pagePadding;
+    padding-left: $page-padding;
     @include prefix(clip-path, none);
   }
 
@@ -30,7 +30,7 @@
 
   header,
   footer {
-    padding: 7px ($pagePadding / 2);
+    padding: 7px ($page-padding / 2);
 
     h1 {
       margin: 0 1em 0 0.5em;
@@ -42,7 +42,7 @@
   }
 
   .text-box {
-    padding: $pagePadding / 2;
+    padding: $page-padding / 2;
   }
 
   .calculator {

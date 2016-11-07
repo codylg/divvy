@@ -3,13 +3,13 @@ input {
   display: block;
   width: 100%;
   height: auto;
-  padding: 0 $pagePadding;
+  padding: 0 $page-padding;
   @include font-antialias;
   font-family: monospace;
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 1.33em;
-  color: $blueLight;
+  color: $blue-light;
   border: none;
   background-color: transparent;
   @include prefix(appearance, none);
@@ -27,7 +27,7 @@ input {
   }
 
   @include placeholder {
-    color: $blueGreyLight;
+    color: $blue-grey-light;
   }
 }
 
