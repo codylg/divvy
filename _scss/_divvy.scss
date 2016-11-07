@@ -155,7 +155,7 @@ footer {
       @include prefix(animation, expense-scale 0.33s ease-in-out 1);
       @include prefix(animation-fill-mode, both);
 
-      &:hover {
+      &:hover:not(:first-of-type:last-of-type) {
 
         .remove-expense {
           opacity: 1;
