@@ -129,23 +129,17 @@ footer {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 16px 14px;
+      padding: 14px;
       opacity: 0;
       @include transition;
       cursor: pointer;
       pointer-events: none;
+      font-size: 2rem;
+      line-height: 0.6em;
+      color: $blueGreyLight;
 
-      &::before {
-        content: '';
-        display: block;
-        width: 12px;
-        height: 2px;
-        border-radius: $radius;
-        background-color: $blueGreyLight;
-      }
-
-      &:hover::before {
-        background-color: $blue;
+      &:hover {
+        color: $blue;
       }
     }
 

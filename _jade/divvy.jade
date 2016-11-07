@@ -63,11 +63,11 @@ html(lang="en")
       div.calculator
       
         div#person-template.person
-          span(data-tooltip="Remove person").remove-person.remove-control
+          span(data-tooltip="Remove person").remove-person.remove-control &times;
           input.name.js-divvy(type="text", placeholder="Person", autocapitalize="word", autocomplete="off", autocorrect="off")
           div.expense-list
             div#expense-template.expense
-              span(data-tooltip="Remove expense").remove-expense.remove-control
+              span(data-tooltip="Remove expense").remove-expense.remove-control &times;
               input.label.small-text(type="text", placeholder="Expense", autocapitalize="sentence", autocomplete="off")
               input.expense-cost.js-divvy(type="number", min="0", placeholder="0.00")
             button.add-expense.small-text + Add expense
@@ -75,11 +75,11 @@ html(lang="en")
           div.expense-total 0.00
       
         div.person
-          span(data-tooltip="Remove person").remove-person.remove-control
+          span(data-tooltip="Remove person").remove-person.remove-control &times;
           input.name.js-divvy(type="text", placeholder="Person", autocapitalize="word", autocomplete="off", autocorrect="off")
           div.expense-list
             div.expense
-              span(data-tooltip="Remove expense").remove-expense.remove-control
+              span(data-tooltip="Remove expense").remove-expense.remove-control &times;
               input.label.small-text(type="text", placeholder="Expense", autocapitalize="sentence", autocomplete="off")
               input.expense-cost.js-divvy(type="number", min="0", placeholder="0.00")
             button.add-expense.small-text + Add expense
