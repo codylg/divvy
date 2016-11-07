@@ -59,13 +59,15 @@ footer {
   @include transition($property: opacity);
 
   h3,
-  h4 {
+  h4,
+  p {
     @include prefix(animation, slide-down 0.66s ease-in-out 1);
     @include prefix(animation-delay, 0.2s);
     @include prefix(animation-fill-mode, both);
   }
 
-  h4 {
+  h4,
+  p {
     color: $blueFaint;
   }
 
