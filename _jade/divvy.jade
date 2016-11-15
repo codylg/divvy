@@ -16,7 +16,7 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport", content="initial-scale=1")
     meta(name="author", content="Cody Lindsay Gordon")
-    
+
     //- Opengraph
     meta(property="og:title", content="#{title} &bull; #{tagline}")
     meta(property="og:site_name", content="#{title}")
@@ -24,17 +24,19 @@ html(lang="en")
     meta(property="og:type", content="website")
     meta(property="og:url", content="http://divvy.lol")
     meta(property="og:image", content="http://divvy.lol/#{card}")
-    
+
     //- iOS webclip icons
     link(rel="apple-touch-icon", href="touch-icon-iphone.png")
     link(rel="apple-touch-icon", sizes="76x76", href="touch-icon-ipad.png")
     link(rel="apple-touch-icon", sizes="120x120", href="touch-icon-iphone-retina.png")
     link(rel="apple-touch-icon", sizes="152x152", href="touch-icon-ipad-retina.png")
     link(rel="apple-touch-icon", sizes="180x180", href="touch-icon-iphone-plus-retina.png")
-    
+
     link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
     link(rel="stylesheet", href="divvy.css")
-    
+
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -42,9 +44,9 @@ html(lang="en")
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-42238629-9', 'auto');
       ga('send', 'pageview');
-    
+
   body.loading
-    
+
     header
       svg(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve")
         path(d="M13,12.709v3")
@@ -54,14 +56,14 @@ html(lang="en")
         path(d="M19,8v3c0,2.761-4.029,5-9,5s-9-2.239-9-5V8")
       h1 #{title}
       h2 #{tagline}
-        
+
     div.container
-    
+
       svg.loader
         circle(cx="10", cy="10", r="9")
-    
+
       div.calculator
-      
+
         div#person-template.person
           span(data-tooltip="Remove person").remove-person.remove-control &times;
           input.name.js-divvy(type="text", placeholder="Person", autocapitalize="word", autocomplete="off", autocorrect="off")
@@ -73,7 +75,7 @@ html(lang="en")
             button.add-expense.small-text + Add expense
           hr
           div.expense-total 0.00
-      
+
         div.person
           span(data-tooltip="Remove person").remove-person.remove-control &times;
           input.name.js-divvy(type="text", placeholder="Person", autocapitalize="word", autocomplete="off", autocorrect="off")
@@ -85,10 +87,10 @@ html(lang="en")
             button.add-expense.small-text + Add expense
           hr
           div.expense-total 0.00
-  
+
         button.add-person
           div.small-text + Add person
-          
+
       div.text-box
         div.payment-summary
         h4.cost-summary.hidden
@@ -110,10 +112,9 @@ html(lang="en")
           br
           br
           | ༼ つ ͠° ͟ ͟ʖ ͡° ༽つ
-          
+
     footer
       h2 Made by 
         a(href="//clg.name", target="_blank") Cody Lindsay Gordon
-  
-    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+
     script(type="text/javascript", src="divvy.js")
