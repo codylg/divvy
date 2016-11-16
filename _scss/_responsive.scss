@@ -60,10 +60,18 @@
         opacity: 1;
       }
 
-      .expense:not(:first-of-type:last-of-type) {
+      .expense {
 
         .remove-expense {
           opacity: 1;
+        }
+
+        &:first-of-type:last-of-type {
+
+          .remove-expense {
+            opacity: 0;
+            pointer-events: none;
+          }
         }
       }
     }

@@ -151,11 +151,19 @@ footer {
       @include prefix(animation, expense-scale 0.33s ease-in-out 1);
       @include prefix(animation-fill-mode, both);
 
-      &:hover:not(:first-of-type:last-of-type) {
+      &:hover {
 
         .remove-expense {
           opacity: 1;
           pointer-events: all;
+        }
+      }
+
+      &:first-of-type:last-of-type {
+
+        .remove-expense {
+          opacity: 0;
+          pointer-events: none;
         }
       }
 
