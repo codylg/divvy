@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: $breakpoint-large) {
 
   .container {
     display: block;
@@ -18,7 +18,7 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-small) {
 
   [data-tooltip]::after {
     display: none;

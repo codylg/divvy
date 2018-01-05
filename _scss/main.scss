@@ -2,6 +2,9 @@ $font: monospace;
 $radius: 2px;
 $page-padding: 40px;
 
+$breakpoint-large: 1100px;
+$breakpoint-small: 620px;
+
 @import 'normalize';
 
 @import 'colors';

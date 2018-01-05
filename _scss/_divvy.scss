@@ -96,6 +96,10 @@ footer {
   font-size: 0;
   @include transition($property: opacity);
 
+  @media (max-width: $breakpoint-large) {
+    padding: $page-padding / 4;
+  }
+
   .person,
   .add-person {
     position: relative;
@@ -112,6 +116,10 @@ footer {
     @include transition;
     @include prefix(transform-origin, top);
     @include prefix(animation, person-scale 0.4s ease-in-out 1);
+
+    @media (max-width: $breakpoint-large) {
+      margin: $page-padding / 4;
+    }
 
     &:hover {
 
