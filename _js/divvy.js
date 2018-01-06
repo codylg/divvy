@@ -1,3 +1,5 @@
+var divvyResults = false;
+
 function decimalize(i) {
   var decimalized = i.toFixed(2);
 
@@ -97,6 +99,8 @@ function divvy() {
       }
     }
 
+    divvyResults = true;
+
     $('.cost-summary').removeClass('hidden');
     $('.even-expenses').addClass('hidden');
     $('.add-expenses').addClass('hidden');
@@ -108,6 +112,7 @@ function divvy() {
 
   } else if (persons.length > 1 && totalCost != 0) {
     // There are enough people, the total cost is not 0, but the cost evens out
+    divvyResults = true;
 
     $('.cost-summary').addClass('hidden');
     $('.even-expenses').removeClass('hidden');
@@ -116,6 +121,7 @@ function divvy() {
 
   } else if (persons.length > 1) {
     // There are enough people, but the total cost is 0
+    divvyResults = false;
 
     $('.cost-summary').addClass('hidden');
     $('.even-expenses').addClass('hidden');
@@ -124,6 +130,7 @@ function divvy() {
 
   } else {
     // There are not enough people
+    divvyResults = false;
 
     $('.cost-summary').addClass('hidden');
     $('.even-expenses').addClass('hidden');
@@ -131,6 +138,8 @@ function divvy() {
     $('.add-more-people').removeClass('hidden');
 
   }
+
+  toggleResultsPrompt();
 }
 
 $('body').on('input', '.js-divvy', function() {
@@ -220,6 +229,7 @@ $('.add-person').click(function() {
 
 // Remove person or expense
 $('body').on('click', '.remove-control', function() {
+  // TODO change this confirmation to a notification/undo banner
   if ($(this).hasClass('remove-person')) {
     var personName = $(this).next('input.name').val();
     if (personName == '') {
@@ -233,6 +243,43 @@ $('body').on('click', '.remove-control', function() {
     $(this).parent().remove();
   }
   divvy();
+});
+
+
+
+// Show and hide results scroll prompt
+var wHeight = $(window).height();
+
+$(window).resize(function() {
+  wHeight = $(window).height();
+});
+
+function toggleResultsPrompt() {
+  var scrollY = $(document).scrollTop();
+  var resultsOffset = $('.text-box').offset();
+  var onScreen = (wHeight + scrollY) - resultsOffset.top;
+
+ if (onScreen < 50 && divvyResults) {
+   $('.scroll-to-results').removeClass('hidden');
+ }
+
+ if (onScreen > 50) {
+   $('.scroll-to-results').addClass('hidden');
+ }
+}
+
+$(window).scroll(function() {
+
+ toggleResultsPrompt();
+
+});
+
+// Scroll to results
+$('body').on('click', '.scroll-to-results', function() {
+
+  $('html, body').animate({
+    scrollTop: ($('.text-box').offset().top)
+  }, 500);
 });
 
 
