@@ -220,7 +220,18 @@ $('.add-person').click(function() {
 
 // Remove person or expense
 $('body').on('click', '.remove-control', function() {
-  $(this).parent().remove();
+  if ($(this).hasClass('remove-person')) {
+    var personName = $(this).next('input.name').val();
+    if (personName == '') {
+      personName = 'this person';
+    }
+    var confirmRemove = window.confirm('Do you want to remove '+ personName + '?');
+    if (confirmRemove) {
+      $(this).parent().remove();
+    }
+  } else {
+    $(this).parent().remove();
+  }
   divvy();
 });
 
