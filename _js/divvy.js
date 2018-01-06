@@ -252,8 +252,8 @@ var wHeight = $(window).height();
 
 function toggleResultsPrompt() {
   var scrollY = $(document).scrollTop();
-  var resultsOffset = $('.text-box').offset();
-  var onScreen = (wHeight + scrollY) - resultsOffset.top;
+  var resultsOffset = $('.text-box').offset().top;
+  var onScreen = (wHeight + scrollY) - resultsOffset;
 
  if (onScreen < 50 && divvyResults) {
    $('.scroll-to-results').removeClass('hidden');
@@ -284,7 +284,5 @@ $('body').on('click', '.scroll-to-results', function() {
 
 
 $(document).ready(function(){
-
   $('body').removeClass('loading');
-
 });
