@@ -32,9 +32,8 @@ footer {
   }
 
   h1 {
-    margin: 0;
-    margin-right: 2em;
-    margin-left: 1em;
+    margin: 0 ($page-padding / 2);
+    margin-top: -2px;
     font-size: 1.4rem;
     color: $charcoal;
 
@@ -43,8 +42,7 @@ footer {
     }
 
     @media (max-width: $media-small) {
-      margin-right: 1em;
-      margin-left: 0.5em;
+      margin: 0 $page-padding / 4;
     }
   }
 
@@ -64,9 +62,18 @@ footer {
 }
 
 header {
+  @include flex;
+  @include prefix(align-items, center);
 
   @media (max-width: $media-medium) {
     margin-top: 8px;
+  }
+
+  @media (max-width: $media-small) {
+
+    h1 {
+      @include prefix(flex-grow, 1);
+    }
   }
 }
 
@@ -112,6 +119,11 @@ footer h2 {
     padding-left: $page-padding / 2;
     background-color: $blue;
     @include prefix(clip-path, none);
+  }
+
+  @media (max-width: $media-small) {
+    padding-top: $page-padding / 2;
+    padding-bottom: $page-padding / 2;
   }
 
   h3,
