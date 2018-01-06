@@ -14,6 +14,11 @@ input {
   color: $blue-light;
   @include prefix(appearance, none);
 
+  @media (max-width: $media-small) {
+    padding-right: $page-padding / 1.5;
+    padding-left: $page-padding / 1.5;
+  }
+
   &:hover:not(:focus) {
     text-decoration: underline;
 
