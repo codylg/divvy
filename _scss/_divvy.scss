@@ -70,7 +70,6 @@ header {
 }
 
 footer {
-  padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
@@ -340,7 +339,6 @@ footer {
 
   p {
     display: block;
-    padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
     margin: 0;
     font-size: 1.2rem;
