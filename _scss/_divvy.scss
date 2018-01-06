@@ -212,24 +212,20 @@ header {
       top: 0;
       right: 0;
       padding: 14px;
-      opacity: 0;
       @include transition;
       font-size: 2rem;
       line-height: 0.6em;
       color: $blue-grey-light;
       cursor: pointer;
-      pointer-events: none;
 
-      &:hover {
-        color: $blue;
+      @media (hover: hover) {
+        opacity: 0;
+
+        &:hover {
+          color: $blue;
+        }
       }
-    }
 
-    .remove-person {
-
-      @media (max-width: $media-small) {
-        opacity: 1;
-      }
     }
 
     .expense {
@@ -242,7 +238,6 @@ header {
 
         .remove-expense {
           opacity: 1;
-          pointer-events: all;
         }
       }
 
@@ -260,10 +255,6 @@ header {
 
       .remove-expense {
         top: -8px;
-
-        @media (max-width: $media-small) {
-          opacity: 1;
-        }
       }
     }
 

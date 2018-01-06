@@ -21,7 +21,11 @@
   @include prefix(transition-properties, margin-top, margin-left, opacity, transform);
   pointer-events: none;
 
-  @media (max-width: $media-small) {
+  // @media (max-width: $media-small) {
+  //   display: none;
+  // }
+
+  @media (hover: none) {
     display: none;
   }
 }
