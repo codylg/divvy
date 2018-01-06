@@ -250,10 +250,6 @@ $('body').on('click', '.remove-control', function() {
 // Show and hide results scroll prompt
 var wHeight = $(window).height();
 
-$(window).resize(function() {
-  wHeight = $(window).height();
-});
-
 function toggleResultsPrompt() {
   var scrollY = $(document).scrollTop();
   var resultsOffset = $('.text-box').offset();
@@ -268,10 +264,13 @@ function toggleResultsPrompt() {
  }
 }
 
+$(window).resize(function() {
+  wHeight = $(window).height();
+  toggleResultsPrompt();
+});
+
 $(window).scroll(function() {
-
  toggleResultsPrompt();
-
 });
 
 // Scroll to results
