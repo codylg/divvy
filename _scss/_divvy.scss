@@ -69,6 +69,10 @@ header {
   }
 }
 
+footer {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .container {
   position: relative;
   @include flex;
@@ -334,10 +338,12 @@ header {
   }
 
   &:hover p {
-    padding-bottom: 5px;
+    // padding-bottom: 5px;
   }
 
   p {
+    display: block;
+    padding-bottom: env(safe-area-inset-bottom);
     margin: 0;
     font-size: 1.2rem;
     text-align: center;
@@ -355,13 +361,6 @@ header {
 
     &.hidden {
       display: block;
-    }
-
-    &:not(.hidden) {
-
-      + footer {
-        margin-bottom: 40px;
-      }
     }
   }
 }
