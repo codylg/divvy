@@ -324,7 +324,7 @@ footer h2 {
 
   svg.loader {
     opacity: 1;
-    // TODO fix this animation
+
     circle {
       @include prefix(animation, loader 2s linear infinite);
     }
