@@ -26,6 +26,7 @@ body {
 
   @media (max-width: $media-medium) {
     padding: 0;
+    padding-left: calc(env(safe-area-inset-left) / 2);
     background-color: $blue;
   }
 }
