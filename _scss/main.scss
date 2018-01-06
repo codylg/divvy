@@ -2,8 +2,8 @@ $font: monospace;
 $radius: 2px;
 $page-padding: 40px;
 
-$breakpoint-large: 1100px;
-$breakpoint-small: 620px;
+$media-medium: 1100px;
+$media-small: 620px;
 
 @import 'normalize';
 
@@ -16,5 +16,3 @@ $breakpoint-small: 620px;
 @import 'loader';
 
 @import 'divvy';
-
-@import 'responsive';

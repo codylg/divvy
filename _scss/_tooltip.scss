@@ -20,6 +20,10 @@
   @include transition;
   @include prefix(transition-properties, margin-top, margin-left, opacity, transform);
   pointer-events: none;
+
+  @media (max-width: $media-small) {
+    display: none;
+  }
 }
 
 [data-tooltip] {

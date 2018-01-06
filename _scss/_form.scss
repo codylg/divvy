@@ -4,21 +4,29 @@ input {
   width: 100%;
   height: auto;
   padding: 0 $page-padding;
+  border: 0;
+  background-color: transparent;
   @include font-antialias;
   font-family: monospace;
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 1.33em;
   color: $blue-light;
-  border: none;
-  background-color: transparent;
   @include prefix(appearance, none);
 
   &:hover:not(:focus) {
     text-decoration: underline;
 
+    @media (max-width: $media-small) {
+      text-decoration: none;
+    }
+
     @include placeholder {
       text-decoration: underline;
+
+      @media (max-width: $media-small) {
+        text-decoration: none;
+      }
     }
   }
 
@@ -40,9 +48,9 @@ input[type=number]::-webkit-outer-spin-button {
 button {
   display: block;
   width: 100%;
-  text-align: left;
-  border: none;
+  border: 0;
   background: none;
+  text-align: left;
   @include prefix(appearance, none);
   outline: none;
 

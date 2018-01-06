@@ -23,6 +23,11 @@ body {
   line-height: 1.6em;
   color: $charcoal;
   -webkit-tap-highlight-color: transparent;
+
+  @media (max-width: $media-small) {
+    padding: 0;
+    // background-color: $blue;
+  }
 }
 
 h1,
