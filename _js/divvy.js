@@ -149,6 +149,7 @@ $('body').on('click', '.add-expense', function() {
 });
 
 var names = [
+  "Aiko",
   "Alma",
   "Archy",
   "Arlie",
@@ -169,6 +170,7 @@ var names = [
   "Hamish",
   "Helen",
   "Ira",
+  "Itsuki",
   "Jacob",
   "Joseph",
   "Karim",
@@ -179,6 +181,7 @@ var names = [
   "Malcolm",
   "Maurice",
   "Mustafa",
+  "Niko",
   "Omar",
   "Pedro",
   "Peta",
@@ -190,6 +193,7 @@ var names = [
   "Violet",
   "Vladislav",
   "Walter",
+  "Yui",
   "Yusuf"
 ];
 
