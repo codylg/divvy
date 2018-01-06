@@ -5,8 +5,10 @@ footer {
   height: $page-padding;
   padding: 7px 0;
 
-  @media (max-width: $media-small) {
-    padding: 7px ($page-padding / 2);
+  @media (max-width: $media-medium) {
+    padding-right: $page-padding / 2;
+    padding-left: $page-padding / 2;
+    margin-top: 8px;
   }
 
   svg {
@@ -36,6 +38,10 @@ footer {
     font-size: 1.4rem;
     color: $charcoal;
 
+    @media (max-width: $media-medium) {
+      color: $white;
+    }
+
     @media (max-width: $media-small) {
       margin-right: 1em;
       margin-left: 0.5em;
@@ -45,6 +51,15 @@ footer {
   h2 {
     font-size: 1.1rem;
     color: $blue-grey;
+
+    @media (max-width: $media-medium) {
+      color: rgba($white, 0.66);
+
+      a,
+      a:hover {
+        color: $white;
+      }
+    }
   }
 }
 
@@ -129,6 +144,7 @@ footer {
   @media (max-width: $media-medium) {
     width: 100%;
     padding: $page-padding / 4;
+    padding-top: 0;
   }
 
   @media (max-width: $media-small) {

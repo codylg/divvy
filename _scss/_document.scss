@@ -24,9 +24,9 @@ body {
   color: $charcoal;
   -webkit-tap-highlight-color: transparent;
 
-  @media (max-width: $media-small) {
+  @media (max-width: $media-medium) {
     padding: 0;
-    // background-color: $blue;
+    background-color: $blue;
   }
 }
 
