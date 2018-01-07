@@ -292,7 +292,7 @@ $('body').on('click', '.remove-person', function() {
   showUndoBanner();
 
   divvy();
-  undoBannerTimeout = setTimeout(hideUndoBanner, 8000);
+  undoBannerTimeout = setTimeout(hideUndoBanner, 9000);
 });
 
 // Restore a person
