@@ -375,9 +375,14 @@ footer h2 {
 
 .undo-banner {
   position: fixed;
-  top: 15px;
+  bottom: $page-padding + 10px;
   left: 50%;
   cursor: pointer;
+
+  @media (max-width: $media-medium) {
+    top: 10px;
+    bottom: auto;
+  }
 
   &.hidden {
     display: block;

@@ -27,7 +27,7 @@
   &.hidden {
     opacity: 0;
     @include prefix(transition-delay, 0);
-    @include prefix(transform, perspective(300px) translateX(-50%) translateY(-10px));
+    @include prefix(transform, perspective(300px) translateX(-50%) translateY(10px));
   }
 }
 
