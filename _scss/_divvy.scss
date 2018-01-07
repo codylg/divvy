@@ -384,6 +384,17 @@ footer h2 {
     bottom: auto;
   }
 
+  @media (pointer: coarse) {
+
+    .undo-click {
+      display: none;
+    }
+
+    .undo-tap {
+      display: inline;
+    }
+  }
+
   &.hidden {
     display: block;
     pointer-events: none;
