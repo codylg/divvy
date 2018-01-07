@@ -227,21 +227,99 @@ $('.add-person').click(function() {
   divvy();
 });
 
+
 // Remove person or expense
-$('body').on('click', '.remove-control', function() {
-  // TODO change this confirmation to a notification/undo banner
-  if ($(this).hasClass('remove-person')) {
-    var personName = $(this).next('input.name').val();
-    if (personName == '') {
-      personName = 'this person';
-    }
-    var confirmRemove = window.confirm('Do you want to remove '+ personName + '?');
-    if (confirmRemove) {
-      $(this).parent().remove();
-    }
-  } else {
-    $(this).parent().remove();
+var storedPersonTemplate;
+var storedPersonName;
+var storedPersonExpenseLabels = [];
+var storedPersonExpenseCosts = [];
+
+$('body').on('click', '.remove-expense', function() {
+  $(this).parent().remove();
+});
+
+var undoBanner = $('.undo-banner');
+var undoBannerName = $('.undo-person-name');
+var undoBannerTimeout;
+
+function showUndoBanner() {
+  if (undoBanner.hasClass('hidden')) {
+    undoBanner.removeClass('hidden');
   }
+
+  if (storedPersonName) {
+    undoBannerName.text(storedPersonName);
+  } else {
+    undoBannerName.text('Some Guy');
+  }
+}
+
+function hideUndoBanner() {
+  if (!undoBanner.hasClass('hidden')) {
+    undoBanner.addClass('hidden');
+  }
+}
+
+$('body').on('click', '.remove-person', function() {
+  var removedPerson = $(this).parent();
+  var removedPersonExpense = removedPerson.find('.expense');
+
+  // Store the removed person template and names
+  storedPersonTemplate = removedPerson.html();
+  storedPersonName = removedPerson.find('input.name').val();
+
+  // Store each expense label
+  // Empty the array first
+  storedPersonExpenseLabels = [];
+
+  removedPersonExpense.each(function(i, expense) {
+    var label = $(this).find('.label').val();
+    storedPersonExpenseLabels.push(label);
+  });
+
+  // Store each expense cost
+  // Empty the array first
+  storedPersonExpenseCosts = [];
+
+  removedPersonExpense.each(function(i, expense) {
+    var cost = $(this).find('.expense-cost').val();
+    storedPersonExpenseCosts.push(cost);
+  });
+
+  // Finally, remove the person
+  $(this).parent().remove();
+  clearTimeout(undoBannerTimeout);
+  showUndoBanner();
+
+  divvy();
+  undoBannerTimeout = setTimeout(hideUndoBanner, 8000);
+});
+
+// Restore a person
+$('body').on('click', '.restore-person', function() {
+  clearTimeout(undoBannerTimeout);
+  hideUndoBanner();
+  // TODO restore the person to their original position
+  $('.add-person').before('<div class="person">' + storedPersonTemplate + '</div>');
+
+  // This is the person that was just restored
+  var restoredPerson = $('.add-person').prev();
+
+  // Input the stored name
+  restoredPerson.find('.name').val(storedPersonName);
+
+  // Input the expense labels
+  restoredPerson.find('.label').each(function(i) {
+    $(this).val(storedPersonExpenseLabels[i]);
+    i++;
+  });
+
+  // Input the expense costs
+  restoredPerson.find('.expense-cost').each(function(i) {
+    $(this).val(storedPersonExpenseCosts[i]);
+    i++;
+  });
+
   divvy();
 });
 

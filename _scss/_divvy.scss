@@ -373,6 +373,18 @@ footer h2 {
   }
 }
 
+.undo-banner {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  cursor: pointer;
+
+  &.hidden {
+    display: block;
+    pointer-events: none;
+  }
+}
+
 @include keyframes(slide-down) {
 
   0% {
