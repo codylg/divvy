@@ -335,6 +335,7 @@ footer h2 {
   position: fixed;
   bottom: 10px;
   left: 50%;
+  margin-bottom: calc(env(safe-area-inset-bottom) / 1.33);
   cursor: pointer;
 
   @media (max-width: $media-medium) {
@@ -350,6 +351,7 @@ footer h2 {
   bottom: $page-padding + 10px;
   left: 50%;
   cursor: pointer;
+  @include prefix(transition-delay, 0.33s);
 
   @media (max-width: $media-medium) {
     top: 10px;
