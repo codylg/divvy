@@ -146,8 +146,15 @@ $('body').on('input', '.js-divvy', function() {
   divvy();
 });
 
+// Highlight input on click, but avoid on Android because it's weird
+var ua = navigator.userAgent.toLowerCase();
+var uaAndroid = ua.indexOf("android") > -1;
+
 $('body').on('click', 'input', function() {
-  $(this).select();
+
+  if (!uaAndroid) {
+    $(this).select();
+  }
 });
 
 var expenseTemplate = $('#expense-template').removeAttr('id').clone();
