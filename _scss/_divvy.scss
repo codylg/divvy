@@ -183,10 +183,10 @@ footer h2 {
     margin: $page-padding / 2;
     border-radius: $radius;
     background-color: $white;
+    box-shadow: 0 1px 2px $blue-grey;
     font-size: 2.4rem;
     line-height: 1.33em;
     color: $blue-light;
-    @include prefix(box-shadow, 0 1px 2px $blue-grey);
     @include transition;
     @include prefix(transform-origin, top);
     @include prefix(animation, person-scale 0.4s ease-in-out 1);
