@@ -39,15 +39,17 @@ $dotted-line-spacing: 6;
   background-repeat: repeat-x;
 }
 
+// Dupe display required for fallback
+// scss-lint:disable DuplicateProperty
+
 // Adds display:flex and other variations
 @mixin flex($property: flex) {
-  display: -webkit-box;
-  display: -webkit-$property;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -ms-$property;
+  display: -webkit-#{$property};
+  display: -ms-#{$property};
   display: $property;
 }
+
+// scss-lint:enable DuplicateProperty
 
 // Add font antialias properties
 @mixin font-antialias {
