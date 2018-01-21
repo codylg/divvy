@@ -1,6 +1,6 @@
 header,
 footer {
-  @include prefix(box-sizing, border-box);
+  box-sizing: border-box;
   display: block;
   height: $page-padding;
   padding: 7px 0;
@@ -87,7 +87,7 @@ footer h2 {
 .container {
   position: relative;
   @include flex;
-  @include prefix(box-sizing, border-box);
+  box-sizing: border-box;
   overflow: hidden;
   min-height: calc(100vh - (#{$page-padding} * 2));
   border-radius: $radius;
@@ -157,7 +157,7 @@ footer h2 {
   @include prefix(flex-shrink, 1);
   @include prefix(flex-wrap, wrap);
   @include prefix(align-items, flex-start);
-  @include prefix(box-sizing, border-box);
+  box-sizing: border-box;
   width: 70%;
   height: 100%;
   padding: $page-padding / 2;
