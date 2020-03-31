@@ -26,16 +26,16 @@
   &.hidden {
     opacity: 0;
     transition-delay: 0;
-    @include prefix(transform, perspective(300px) translateX(-50%) translateY(10px));
+    @include prefix(transform, perspective(300px) translateX(-50%) translateY(8px));
   }
 }
 
 [data-tooltip]::after {
   content: attr(data-tooltip);
-  top: 3px;
-  right: 35px;
+  top: 4px;
+  right: 36px;
   opacity: 0;
-  @include prefix(transform, perspective(300px) translateX(10px) scale(0.95));
+  @include prefix(transform, perspective(300px) translateX(8px) scale(0.95));
   pointer-events: none;
 
   @media (hover: none) {
