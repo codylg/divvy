@@ -73,7 +73,7 @@ html(lang="en")
             div#expense-template.expense
               span(data-tooltip="Remove expense").remove-expense.remove-control &times;
               input.label.small-text(type="text", placeholder="Expense", autocapitalize="sentence", autocomplete="off")
-              input.expense-cost.js-divvy(type="number", min="0", placeholder="0.00")
+              input.expense-cost.js-divvy(type="number", inputmode="numeric", min="0", placeholder="0.00")
             button.add-expense.small-text + Add expense
           hr
           div.expense-total 0.00
@@ -85,7 +85,7 @@ html(lang="en")
             div.expense
               span(data-tooltip="Remove expense").remove-expense.remove-control &times;
               input.label.small-text(type="text", placeholder="Expense", autocapitalize="sentence", autocomplete="off")
-              input.expense-cost.js-divvy(type="number", min="0", placeholder="0.00")
+              input.expense-cost.js-divvy(type="number", inputmode="numeric", min="0", placeholder="0.00")
             button.add-expense.small-text + Add expense
           hr
           div.expense-total 0.00
