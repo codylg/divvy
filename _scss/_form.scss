@@ -55,6 +55,7 @@ button {
   width: 100%;
   border: 0;
   background: none;
+  font-family: inherit;
   text-align: left;
   @include prefix(appearance, none);
   outline: none;
