@@ -1,0 +1,18 @@
+<svg enable-background="new 0 0 20 20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    path, ellipse {
+      fill: none;
+      stroke: #26282e;
+      stroke-miterlimit: 10;
+    }
+    @media (prefers-color-scheme: dark) {
+      path, ellipse {
+        stroke: #bdbdd1;
+      }
+    }
+  </style>
+  <path d="m13 12.709v3"/><path d="m17 11.121v3"/>
+  <path d="m15 12.149v3"/>
+  <ellipse cx="10" cy="8" rx="9" ry="5"/>
+  <path d="m19 8v3c0 2.761-4.029 5-9 5s-9-2.239-9-5v-3"/>
+</svg>
