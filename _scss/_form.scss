@@ -6,12 +6,11 @@ input {
   padding: 0 $page-padding;
   border: 0;
   background-color: transparent;
-  @include font-antialias;
-  font-family: monospace;
+  font-family: $font;
   font-weight: 300;
   font-size: 2.4rem;
   line-height: 1.33em;
-  color: $blue-light;
+  color: $blue-text;
   @include prefix(appearance, none);
 
   @media (max-width: $media-small) {
@@ -60,6 +59,7 @@ button {
   @include prefix(appearance, none);
   outline: none;
 
+  &:hover,
   &:focus {
     text-decoration: underline;
     text-decoration-color: $charcoal;
