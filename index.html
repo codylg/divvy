@@ -53,11 +53,17 @@
       </svg>
       <div class="calculator">
         <div id="person-template" class="person"><span data-tooltip="Remove person" class="remove-person remove-control">&times;</span>
-          <input type="text" placeholder="Person" autocapitalize="word" autocomplete="off" autocorrect="off" class="name js-divvy">
+          <label><span>Name</span>
+            <input type="text" name="name" placeholder="Person" autocapitalize="word" autocomplete="off" autocorrect="off" class="name js-divvy">
+          </label>
           <div class="expense-list">
             <div id="expense-template" class="expense"><span data-tooltip="Remove expense" class="remove-expense remove-control">&times;</span>
-              <input type="text" placeholder="Expense" autocapitalize="sentence" autocomplete="off" class="label small-text">
-              <input type="number" inputmode="decimal" min="0" placeholder="0.00" class="expense-cost js-divvy">
+              <label><span>Expense</span>
+                <input type="text" name="expense" placeholder="Expense" autocapitalize="sentence" autocomplete="off" class="label small-text">
+              </label>
+              <label><span>Amount</span>
+                <input type="number" name="amount" inputmode="decimal" min="0" placeholder="0.00" class="expense-cost js-divvy">
+              </label>
             </div>
             <button class="add-expense small-text">+ Add expense</button>
           </div>
@@ -65,11 +71,17 @@
           <div class="expense-total">0.00</div>
         </div>
         <div class="person"><span data-tooltip="Remove person" class="remove-person remove-control">&times;</span>
-          <input type="text" placeholder="Person" autocapitalize="word" autocomplete="off" autocorrect="off" class="name js-divvy">
+          <label><span>Name</span>
+            <input type="text" name="name" placeholder="Person" autocapitalize="word" autocomplete="off" autocorrect="off" class="name js-divvy">
+          </label>
           <div class="expense-list">
             <div class="expense"><span data-tooltip="Remove expense" class="remove-expense remove-control">&times;</span>
-              <input type="text" placeholder="Expense" autocapitalize="sentence" autocomplete="off" class="label small-text">
-              <input type="number" inputmode="decimal" min="0" placeholder="0.00" class="expense-cost js-divvy">
+              <label><span>Expense</span>
+                <input type="text" name="expense" placeholder="Expense" autocapitalize="sentence" autocomplete="off" class="label small-text">
+              </label>
+              <label><span>Amount</span>
+                <input type="number" name="amount" inputmode="decimal" min="0" placeholder="0.00" class="expense-cost js-divvy">
+              </label>
             </div>
             <button class="add-expense small-text">+ Add expense</button>
           </div>
