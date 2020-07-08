@@ -321,23 +321,6 @@ footer h2 {
   display: none;
 }
 
-.loading {
-
-  .calculator,
-  .text-box {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  svg.loader {
-    opacity: 1;
-
-    circle {
-      @include prefix(animation, loader 2s linear infinite);
-    }
-  }
-}
-
 .scroll-to-results {
   position: fixed;
   bottom: 10px;

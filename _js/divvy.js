@@ -365,9 +365,3 @@ $('body').on('click', '.scroll-to-results', function() {
     scrollTop: ($('.text-box').offset().top)
   }, 500);
 });
-
-
-
-$(document).ready(function(){
-  $('body').removeClass('loading');
-});
