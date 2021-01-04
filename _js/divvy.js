@@ -243,6 +243,7 @@ var storedPersonExpenseCosts = [];
 
 $('body').on('click', '.remove-expense', function() {
   $(this).parent().remove();
+  divvy();
 });
 
 var undoBanner = $('.undo-banner');
