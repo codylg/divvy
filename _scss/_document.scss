@@ -18,6 +18,7 @@ body {
   background-color: $background;
   @include font-antialias;
   font-family: $font;
+  font-variant-ligatures: no-common-ligatures;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6em;

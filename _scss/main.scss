@@ -1,4 +1,6 @@
-$font: "Courier", monospace;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+$font: "Space Mono", "Courier", monospace;
 $radius: 2px;
 $page-padding: 40px;
 
