@@ -138,7 +138,7 @@ footer h2 {
   h4,
   p {
     color: $blue-dark;
-    @include prefix(animation, slide-down 0.66s ease-in-out 1);
+    @include prefix(animation, fade-in 0.66s ease-in-out 1);
     @include prefix(animation-delay, 0.2s);
     @include prefix(animation-fill-mode, both);
 
@@ -376,15 +376,13 @@ footer h2 {
   }
 }
 
-@include keyframes(slide-down) {
+@include keyframes(fade-in) {
 
   0% {
-    max-height: 0;
     opacity: 0;
   }
 
   100% {
-    max-height: 250px;
     opacity: 1;
   }
 }
