@@ -239,10 +239,6 @@ footer h2 {
     .small-text {
       font-size: 1.6rem;
       color: $blue-grey;
-
-      @media (max-width: $media-small) {
-        font-size: 1.4rem;
-      }
     }
 
     .remove-person,
