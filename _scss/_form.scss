@@ -19,8 +19,9 @@ input {
   @include prefix(appearance, none);
 
   @media (max-width: $media-small) {
-    padding-right: $page-padding / 1.5;
-    padding-left: $page-padding / 1.5;
+    padding-right: $page-padding / 2;
+    padding-left: $page-padding / 2;
+    font-size: 2rem;
   }
 
   &:hover:not(:focus) {

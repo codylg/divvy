@@ -11,6 +11,11 @@ footer {
     padding-left: $page-padding / 2;
   }
 
+  @media (max-width: $media-small) {
+    padding-right: $page-padding-mobile;
+    padding-left: $page-padding-mobile;
+  }
+
   svg {
     display: inline-block;
     vertical-align: middle;
@@ -23,7 +28,7 @@ footer {
       stroke: $charcoal;
 
       @media (max-width: $media-medium) {
-        stroke: $blue-dark;
+        stroke: $blue-very-dark;
       }
     }
   }
@@ -42,11 +47,11 @@ footer {
     color: $charcoal;
 
     @media (max-width: $media-medium) {
-      color: $blue-dark;
+      color: $blue-very-dark;
     }
 
     @media (max-width: $media-small) {
-      margin: 0 $page-padding / 4;
+      margin: 0 $page-padding-mobile / 2;
     }
   }
 
@@ -55,10 +60,10 @@ footer {
     color: $blue-grey;
 
     @media (max-width: $media-medium) {
-      color: $blue-dark;
+      color: $blue-very-dark;
 
       a {
-        color: $blue-dark;
+        color: $blue-very-dark;
       }
     }
   }
@@ -103,6 +108,7 @@ footer h2 {
     min-height: 0;
     border-radius: 0;
     background-image: none;
+    background-color: transparent;
   }
 }
 
@@ -118,14 +124,14 @@ footer h2 {
 
   @media (max-width: $media-medium) {
     width: auto;
+    padding-right: $page-padding / 2;
     padding-left: $page-padding / 2;
-    background-color: $blue;
+    background-color: transparent;
     @include prefix(clip-path, none);
   }
 
   @media (max-width: $media-small) {
-    padding-top: $page-padding / 2;
-    padding-bottom: $page-padding / 2;
+    padding: 0 $page-padding-mobile;
   }
 
   h3,
@@ -135,6 +141,10 @@ footer h2 {
     @include prefix(animation, slide-down 0.66s ease-in-out 1);
     @include prefix(animation-delay, 0.2s);
     @include prefix(animation-fill-mode, both);
+
+    @media (max-width: $media-medium) {
+      color: $blue-very-dark;
+    }
   }
 
   h4,
@@ -142,7 +152,7 @@ footer h2 {
     color: $blue-medium;
 
     @media (max-width: $media-medium) {
-      color: $blue-dark;
+      color: $blue-very-dark;
     }
   }
 
@@ -199,17 +209,18 @@ footer h2 {
     @include prefix(animation, person-scale 0.4s ease-in-out 1);
 
     @media (max-width: $media-medium) {
-      margin: $page-padding / 4;
+      margin: $page-padding-mobile / 2;
     }
 
     @media (max-width: $media-small) {
       @include prefix(flex-basis, 100%);
-      padding-top: $page-padding / 2;
-      padding-bottom: $page-padding / 2;
+      padding-top: $page-padding-mobile;
+      padding-bottom: $page-padding-mobile;
+      font-size: 2rem;
 
       hr {
-        margin-top: $page-padding / 2;
-        margin-bottom: $page-padding / 2;
+        margin-top: $page-padding-mobile;
+        margin-bottom: $page-padding-mobile;
       }
 
       &:not(:last-child) {
@@ -228,6 +239,10 @@ footer h2 {
     .small-text {
       font-size: 1.6rem;
       color: $blue-grey;
+
+      @media (max-width: $media-small) {
+        font-size: 1.4rem;
+      }
     }
 
     .remove-person,
@@ -287,8 +302,8 @@ footer h2 {
       padding: 0 $page-padding;
 
       @media (max-width: $media-small) {
-        padding-right: $page-padding / 1.5;
-        padding-left: $page-padding / 1.5;
+        padding-right: $page-padding / 2;
+        padding-left: $page-padding / 2;
       }
     }
 
@@ -310,8 +325,8 @@ footer h2 {
       padding: 0 $page-padding;
 
       @media (max-width: $media-small) {
-        padding-right: $page-padding / 1.5;
-        padding-left: $page-padding / 1.5;
+        padding-right: $page-padding / 2;
+        padding-left: $page-padding / 2;
       }
     }
   }
