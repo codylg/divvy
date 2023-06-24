@@ -25,17 +25,12 @@ input {
   }
 
   &:hover:not(:focus) {
-    text-decoration: underline;
 
-    @media (max-width: $media-small) {
-      text-decoration: none;
-    }
-
-    @include placeholder {
+    @media (pointer: fine) {
       text-decoration: underline;
 
-      @media (max-width: $media-small) {
-        text-decoration: none;
+      @include placeholder {
+        text-decoration: underline;
       }
     }
   }
@@ -67,7 +62,52 @@ button {
 
   &:hover,
   &:focus {
-    text-decoration: underline;
-    text-decoration-color: $charcoal;
+
+    @media (pointer: fine) {
+      text-decoration: underline;
+      text-decoration-color: $charcoal;
+    }
+  }
+
+  &.button {
+    padding: $page-padding-mobile 0;
+    margin: $page-padding-mobile;
+    margin-top: 0;
+    border-radius: $radius * 4;
+    background-color: $blue-dark;
+    box-shadow: 0 1px 2px rgba($blue-dark, 0.5);
+    font-size: 1.6rem;
+    line-height: 1.33em;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+    @include transition;
+  }
+}
+
+.mobile-buttons {
+  position: fixed;
+  z-index: 4;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+
+  @media (max-width: $media-small) {
+    display: flex;
+  }
+
+  .split-bill.show-split {
+    background-color: $blue-grey;
+
+    span.not-splitting {
+      display: none;
+    }
+  }
+
+  .split-bill:not(.show-split) {
+    span.splitting {
+      display: none;
+    }
   }
 }

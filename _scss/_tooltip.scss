@@ -45,8 +45,11 @@
 
 [data-tooltip] {
 
-  &:hover::after {
-    opacity: 1;
-    @include prefix(transform, perspective(300px));
+  @media (pointer: fine) {
+
+    &:hover::after {
+      opacity: 1;
+      @include prefix(transform, perspective(300px));
+    }
   }
 }

@@ -1,6 +1,6 @@
 block variables
   - var title = "Divvy"
-  - var tagline = "Split bills between friends"
+  - var tagline = "Split expenses between friends"
   - var description = "Divvy will evenly split bills between friends. Add the expenses for each person and Divvy will find the most efficient sequence of repayments."
   - var card = "card-divvy.png"
 
@@ -41,7 +41,7 @@ html(lang="en")
   body
 
     header
-      svg(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve", alt="")
+      svg.logo(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve", alt="")
         path(d="M13,12.709v3")
         path(d="M17,11.121v3")
         path(d="M15,12.149v3")
@@ -94,6 +94,12 @@ html(lang="en")
           div.small-text + Add person
 
       div.text-box
+        svg.logo(version="1.1", x="0px", y="0px", viewBox="0 0 20 20", xml:space="preserve", alt="")
+          path(d="M13,12.709v3")
+          path(d="M17,11.121v3")
+          path(d="M15,12.149v3")
+          ellipse(cx="10", cy="8", rx="9", ry="5")
+          path(d="M19,8v3c0,2.761-4.029,5-9,5s-9-2.239-9-5V8")
         div.payment-summary
         h4.cost-summary.hidden
           span.cost-total 0.00
@@ -102,7 +108,7 @@ html(lang="en")
           |  people at 
           span.cost-share 0.00
           |  each
-        h4.add-expenses Add the expenses for each person and the total bill will be shared
+        h4.add-expenses Add the expenses for each person and the total cost will be shared
         p.add-expenses Divvy will find the most efficient sequence of repayments
         h4.even-expenses.hidden
           | It all worked out in the end
@@ -115,10 +121,11 @@ html(lang="en")
           br
           | ༼ つ ͠° ͟ ͟ʖ ͡° ༽つ
 
-    .scroll-to-results.tooltip.hidden
-      | View results 
-      small &#9660;
-    
+    .mobile-buttons
+      button.split-bill.button
+        span.not-splitting Split expenses
+        span.splitting Edit expenses
+
     .undo-banner.restore-person.tooltip.hidden
       span.undo-person-name Some Guy
       |  was removed &mdash; 

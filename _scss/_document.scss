@@ -30,6 +30,10 @@ body {
     padding-left: calc(env(safe-area-inset-left) / 2);
     background-color: $blue;
   }
+
+  @media (max-width: $media-small) {
+    padding-bottom: 120px;
+  }
 }
 
 h1,
@@ -89,7 +93,10 @@ a:focus {
 a {
   color: $charcoal;
 
-  &:hover {
-    text-decoration: underline;
+  @media (pointer: fine) {
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

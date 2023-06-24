@@ -316,38 +316,15 @@ $('body').on('click', '.restore-person', function() {
   divvy();
 });
 
+// Show and hide mobile split panel
+$('body').on('click', '.split-bill', function() {
+  $(this).toggleClass('show-split');
+  $('header').toggleClass('show-split');
+  $('.text-box').toggleClass('show-split');
 
-
-// Show and hide results scroll prompt
-var wHeight = $(window).height();
-
-function toggleResultsPrompt() {
-  var scrollY = $(document).scrollTop();
-  var resultsOffset = $('.text-box').offset().top;
-  var onScreen = (wHeight + scrollY) - resultsOffset;
-
- if (onScreen < 50 && divvyResults) {
-   $('.scroll-to-results').removeClass('hidden');
- }
-
- if (onScreen > 50) {
-   $('.scroll-to-results').addClass('hidden');
- }
-}
-
-$(window).resize(function() {
-  wHeight = $(window).height();
-  toggleResultsPrompt();
-});
-
-$(window).scroll(function() {
- toggleResultsPrompt();
-});
-
-// Scroll to results
-$('body').on('click', '.scroll-to-results', function() {
-
-  $('html, body').animate({
-    scrollTop: ($('.text-box').offset().top)
-  }, 500);
+  if ($(this).hasClass('show-split')) {
+    $("meta[name='theme-color']").attr('content', '#000000');
+  } else {
+    $("meta[name='theme-color']").attr('content', '#1e96ff');
+  }
 });

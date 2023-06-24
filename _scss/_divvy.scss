@@ -16,23 +16,6 @@ footer {
     padding-left: $page-padding-mobile;
   }
 
-  svg {
-    display: inline-block;
-    vertical-align: middle;
-    width: 26px;
-    height: 26px;
-
-    path,
-    ellipse {
-      fill: none;
-      stroke: $charcoal;
-
-      @media (max-width: $media-medium) {
-        stroke: $blue-very-dark;
-      }
-    }
-  }
-
   h1,
   h2 {
     display: inline-block;
@@ -69,6 +52,23 @@ footer {
   }
 }
 
+svg.logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 26px;
+  height: 26px;
+
+  path,
+  ellipse {
+    fill: none;
+    stroke: $charcoal;
+
+    @media (max-width: $media-medium) {
+      stroke: $blue-very-dark;
+    }
+  }
+}
+
 header {
   @include flex;
   @include prefix(align-items, center);
@@ -81,6 +81,35 @@ header {
 
     h1 {
       @include prefix(flex-grow, 1);
+    }
+  }
+
+  @media (max-width: $media-small) {
+
+    &::before {
+      content: '';
+      display: block;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      background-color: $blue-medium;
+      outline: solid 24px $black;
+      opacity: 0;
+      @include transition($duration: 0.4s);
+    }
+
+    &.show-split::before {
+      visibility: visible;
+      margin: 12px;
+      width: calc(100vw - 24px);
+      opacity: 1;
     }
   }
 }
@@ -122,6 +151,13 @@ footer h2 {
   @include prefix(clip-path, polygon($page-padding 0, 100% 0%, 100% 100%, 0% 100%));
   @include transition($property: opacity);
 
+  @media (min-width: $media-small) {
+
+    svg.logo {
+      display: none;
+    }
+  }
+
   @media (max-width: $media-medium) {
     width: auto;
     padding-right: $page-padding / 2;
@@ -131,7 +167,25 @@ footer h2 {
   }
 
   @media (max-width: $media-small) {
-    padding: 0 $page-padding-mobile;
+    position: fixed;
+    z-index: 1;
+    top: 100vh;
+    left: 0;
+    box-sizing: border-box;
+    visibility: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    height: calc(100vh - 28px);
+    padding: 20px $page-padding-mobile 120px $page-padding-mobile;
+    background-color: $white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    @include transition($duration: 0.5s);
+
+    &.show-split {
+      top: 28px;
+      visibility: visible;
+    }
   }
 
   h3,
@@ -153,6 +207,10 @@ footer h2 {
 
     @media (max-width: $media-medium) {
       color: $blue-very-dark;
+    }
+
+    @media (max-width: $media-small) {
+      color: $blue-text;
     }
   }
 
@@ -314,7 +372,11 @@ footer h2 {
     cursor: pointer;
 
     &:hover {
-      @include prefix(transform, scaleY(1.033));
+
+      @media (pointer: fine) {
+
+        @include prefix(transform, scaleY(1.033));
+      }
     }
 
     div {
@@ -330,21 +392,6 @@ footer h2 {
 
 .hidden {
   display: none;
-}
-
-.scroll-to-results {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  margin-bottom: calc(env(safe-area-inset-bottom) / 1.33);
-  cursor: pointer;
-
-  @media (max-width: $media-medium) {
-
-    &.hidden {
-      display: block;
-    }
-  }
 }
 
 .undo-banner {
