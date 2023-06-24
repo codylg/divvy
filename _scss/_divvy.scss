@@ -109,6 +109,7 @@ header {
 
       + .container .calculator {
         touch-action: none;
+        pointer-events: none;
       }
 
       &::before {
