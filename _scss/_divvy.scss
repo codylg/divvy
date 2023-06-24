@@ -105,11 +105,18 @@ header {
       @include transition($duration: 0.4s);
     }
 
-    &.show-split::before {
-      visibility: visible;
-      margin: 12px;
-      width: calc(100vw - 24px);
-      opacity: 1;
+    &.show-split {
+
+      + .container .calculator {
+        touch-action: none;
+      }
+
+      &::before {
+        visibility: visible;
+        margin: 12px;
+        width: calc(100vw - 24px);
+        opacity: 1;
+      }
     }
   }
 }
@@ -175,7 +182,7 @@ footer h2 {
     visibility: hidden;
     overflow-y: auto;
     width: 100vw;
-    height: calc(100vh - 28px);
+    height: calc(100vh - 32px);
     padding: 20px $page-padding-mobile 120px $page-padding-mobile;
     background-color: $white;
     border-top-left-radius: 16px;
@@ -183,7 +190,7 @@ footer h2 {
     @include transition($duration: 0.5s);
 
     &.show-split {
-      top: 28px;
+      top: 32px;
       visibility: visible;
     }
   }
