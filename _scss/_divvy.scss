@@ -107,11 +107,6 @@ header {
 
     &.show-split {
 
-      + .container .calculator {
-        touch-action: none;
-        pointer-events: none;
-      }
-
       &::before {
         visibility: visible;
         margin: 12px;
